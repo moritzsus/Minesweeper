@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/allgemein.css" />
+    <link rel="stylesheet" href="css/startScreen.css" />
+    <link rel="stylesheet" href="css/gameplay.css" />
+    <link rel="stylesheet" href="css/endScreen.css" />
+    <title>Minesweeper</title>
+  </head>
+
+  <body>
+    <!-- Startbereich, Spielbeschreibung und Eingabefelder -->
+    <div class="pageModus" id="startScreen">
+      <h1>MINESWEEPER</h1>
+      <p>
+        Zu Beginn wähle die Feldgröße aus. Erlaubt sind bei den Zeilen und Spalten alle Werte von 5 bis 20. Die Minenanzahl muss mindestens 1 und höchstens 60% aller Felder betragen. Danach kannst du das Spiel über den Start ▶️ Button beginnen. Ziel des Spiels ist es, alle Minen zu entschärfen (durch Klicken im Entschärfen-Modus auf ein Feld -> Flagge 🚩 wird gesetzt) und alle anderen Felder aufzudecken. Felder, an denen sich keine Mine befindet, zeigen die Anzahl der Minen an, die in direkter Nachbarschaft liegen (8 umliegende Felder). Liegt keine Mine in der Nähe, wird die Zahl 0 allerdings nicht angezeigt. Eine fehlerhaft gesetzte Flagge kann durch erneutes Klicken im Entschärfen-Modus wieder zurückgenommen werden. Wird ein Feld aufgedeckt, auf welchem sich eine Mine 💣 befindet, ist das Spiel verloren. Ein Timer startet nachdem der Startbutton geklickt wurde und stoppt bei Spielende automatisch. Der Debug-Modus 🪲 auf der linken Seite zeigt alle Positionen der Minen an. Durch erneutes Klicken kehrst du in den normalen Spielmodus zurück. <br><br>
+        Viel Erfolg!
+      </p>
+
+      <div id="errorDiv"></div>
+
+      <label>Zeilen:</label>
+      <input type="number" class="textInput" id="textZeilen" />
+      <label>Spalten:</label>
+      <input type="number" class="textInput" id="textSpalten" />
+      <label>Minen:</label>
+      <input type="number" class="textInput" id="textBomben" />
+      <button type="button" , id="startButton" onclick="checkInput()">
+        Start ▶️
+      </button>
+    </div>
+
+    <!-- Gameplaybereich -> in JS Spielfeld generieren etc -->
+    <div class="pageModus" id="gameplay">
+      <h1 id="gameh1">MINESWEEPER</h1>
+      <div id="minesLeft"></div>
+      <table id="gameplayTable"></table>
+
+      <div id="innerGridLeft">
+        <button id="defusebtn" onclick="defuseModus()">Aufdecken 🔍</button>
+        <button id="debugbtn" onclick="debugModus()">Debug 🪲</button>
+      </div>
+
+      <div id="innerGridRight">
+        <div id="timer">0</div>
+        <p id="smallWinLoseText"></p>
+        <button id="home" onclick="newGame()">Neues Spiel ↩</button>
+      </div>
+    </div>
+
+    <!-- Endscreen -> Kurze Visuelle Einblendung eines Texts -->
+    <div id="endScreen"></div>
+    <div id="winLoseTextBox">
+      <p id="winLoseText"></p>
+    </div>
+
+    <script src="javascript/startscreen.js"></script>
+    <script src="javascript/gameplay.js"></script>
+    <script src="javascript/endScreen.js"></script>
+  </body>
+</html>

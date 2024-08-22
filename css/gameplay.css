@@ -1,0 +1,81 @@
+#gameplay {
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "top top top"
+    "top2 top2 top2"
+    "left mid right";
+}
+
+#gameh1 {
+  grid-area: top;
+}
+
+#innerGridLeft {
+  grid-area: left;
+  display: grid;
+  grid-template-rows: 50px 50px;
+}
+
+#innerGridRight {
+  grid-area: right;
+  display: grid;
+  grid-template-rows: 80px 20px 50px;
+}
+
+#defusebtn {
+  width: 120px;
+  margin: 20px auto 0px auto;
+}
+
+#debugbtn {
+  width: 120px;
+  margin: 20px auto 0px auto;
+}
+
+#timer {
+  width: 120px;
+  margin: 20px auto 0px auto;
+  font-family: "alarmClock", "sans-serif";
+  font-size: 45px;
+  color: rgb(255, 30, 0);
+}
+
+#smallWinLoseText {
+  margin-top: 0px;
+}
+
+#home {
+  width: 120px;
+  margin: 20px auto 0px auto;
+}
+
+table {
+  grid-area: mid;
+  margin-bottom: 25px;
+  padding: 7px;
+  background-color: rgb(25, 25, 51);
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px black;
+  border-spacing: 5px;
+}
+
+td {
+  font-size: 20px;
+  color: white;
+  width: 28px;
+  height: 28px;
+  margin: 50px;
+  border-radius: 5px;
+  background-color: rgb(51, 51, 102);
+}
+
+#minesLeft {
+  color: white;
+  margin-bottom: 20px;
+  grid-area: top2;
+}
+
+button {
+  font-size: 15px;
+}
